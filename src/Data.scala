@@ -1,8 +1,9 @@
 object Data {
 
   def get_input: String = {
-    val lines = scala.io.Source.fromFile("src/input/input1.txt").mkString
-    lines
+    "src/input/input1.txt"
+    val source = scala.io.Source.fromFile("src/input/input1.txt")
+    try source.mkString finally source.close()
   }
 
   def get_input_list: Array[Int] = {
